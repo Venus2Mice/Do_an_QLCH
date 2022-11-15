@@ -4,7 +4,7 @@ import Help.Help;
 
 public class Book {
 
-    private String bookName;
+    private String bookName = "Unknown";
 
     public String getBookName() {
         return bookName;
@@ -14,7 +14,7 @@ public class Book {
         this.bookName = bookName;
     }
 
-    private String description;
+    private String description = "Unknown";
 
     public String getDescription() {
         return description;
@@ -24,7 +24,7 @@ public class Book {
         this.description = description;
     }
 
-    private String title;
+    private String title = "Unknown";
 
     public String getTitle() {
         return title;
@@ -34,7 +34,7 @@ public class Book {
         this.title = title;
     }
 
-    private String publisher;
+    private String publisher = "Unknown publisher";
 
     public String getPublisher() {
         return publisher;
@@ -44,7 +44,7 @@ public class Book {
         this.publisher = publisher;
     }
 
-    private String authors;
+    private String authors = "Unkown authors";
 
     public String getAuthors() {
         return authors;
@@ -54,7 +54,7 @@ public class Book {
         this.authors = authors;
     }
 
-    private int year;
+    private int year = 2000;
 
     public int getYear() {
         return year;
@@ -64,7 +64,7 @@ public class Book {
         this.year = year;
     }
 
-    private int editon;
+    private int editon = 1;
 
     public int getEditon() {
         return editon;
@@ -74,7 +74,7 @@ public class Book {
         this.editon = editon;
     }
 
-    private int isbn;
+    private int isbn = 978;
 
     public int getIsbn() {
         return isbn;
@@ -91,7 +91,7 @@ public class Book {
         return id;
     }
 
-    private float price;
+    private float price = 0.0f;
 
     public float getPrice() {
         return price;
@@ -119,31 +119,5 @@ public class Book {
     public Book() {
         id += stt;
         stt++;
-    }
-
-    public void RenderBook() {
-        System.out.println(">>>> Book detail:");
-        System.out.println("> Id : " + getId());
-        System.out.println("> Ten sach : " + getBookName());
-        System.out.println("> Tieu de : " + getTitle());
-        System.out.println("> Ten tac gia : " + getAuthors());
-        System.out.println("> Mo ta : " + getDescription());
-        System.out.println("> Lan tai ban: " + getEditon());
-        System.out.println("> Nha xuat ban: " + getPublisher());
-        System.out.println("> Gia : " + getPrice() + ".vnd");
-        System.out.println("> Nam xuat ban : " + getYear());
-        System.out.println("> Ma isbn : " + getIsbn());
-    }
-
-    public void SetBook() {
-        this.setBookName(Help.inputString("> Ten sach : "));
-        this.setAuthors(Help.inputString("> Tac gia : "));
-        this.setDescription(Help.inputString("> Mo Ta : "));
-        this.setEditon(Help.inputInt("> Tai ban: "));
-        this.setIsbn(Help.inputInt("> Ma isbn:"));
-        this.setPublisher(Help.inputString("> Ten nxb:"));
-        this.setTitle(Help.inputString("> Tieu de:"));
-        this.setPrice(Help.inputFloat("> Gia: "));
-        this.setYear(Help.inputInt("> Nam xuat ban:"));
     }
 }
