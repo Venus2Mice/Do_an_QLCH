@@ -40,17 +40,24 @@ public class BookView {
     public void Search(){
         String input = Help.inputString(">> Nhap tu khoa:");
         var tmp = list.Select(input);
-        Help.outputString(">>Searching...");
+        Help.outputString(">>\t\t\t\t\t\t\tSearching...");
         if(tmp!=null)
         for (Book book : tmp) {
             book.RenderBook();
+        }
+        else{
+            Help.outputString("Not Found!");
         }
     }
     public void DisplayListBook() {
         Help.outputString("\t\t\t\t\t\t\tDanh sach cac cuon sach:");
         var tmp = list.Select();
+        if(tmp!=null)
         for (Book book : tmp) {
             book.RenderBook();
+        }
+        else{
+            Help.outputString("Danh sach rong!");
         }
     }
     public void Render() {
