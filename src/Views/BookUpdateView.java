@@ -8,10 +8,9 @@ public class BookUpdateView {
 
     public BookUpdateView(Book model) {
         Model = model;
-        Render();
     }
 
-    private void Render() {
+    public void Render() {
         System.out.println(">>>> UPDATE BOOK INFORMATION");
         Model.setBookName(Help.inputString("> Ten sach : ", Model.getBookName()));
         Model.setAuthors(Help.inputString("> Tac gia : ", Model.getAuthors()));
@@ -22,9 +21,5 @@ public class BookUpdateView {
         Model.setTitle(Help.inputString("> Tieu de:", Model.getTitle()));
         Model.setPrice(Help.inputFloat("> Gia: ", Model.getPrice()));
         Model.setYear(Help.inputInt("> Nam xuat ban:", Model.getYear()));
-    }
-
-    public Book get() {
-        return Model;
     }
 }

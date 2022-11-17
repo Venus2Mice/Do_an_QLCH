@@ -6,9 +6,9 @@ public class Help {
     final static Scanner sc = new Scanner(System.in);
 
     public static String inputString(String message, String oldValue) {
-        System.out.println(message);
+        System.out.print(message);
         System.out.println(oldValue);
-        System.out.println("New value >>");
+        System.out.print("New value >>");
         var newValue = sc.nextLine();
         newValue = newValue.trim();
         boolean IsNullOrEmpty = false;
@@ -48,14 +48,15 @@ public class Help {
 
     public static int inputInt(String message, int oldValue) {
         try {
-            System.out.println(message);
+            System.out.print(message);
             System.out.println(oldValue);
-            System.out.println("New value >>");
+            System.out.print("New value >>");
             var input = sc.nextLine();
             input = input.trim();
             boolean IsNullOrEmpty = false;
             if (input == null || input == "") {
                 IsNullOrEmpty = true;
+                input="0";
             }
             int newValue = Integer.parseInt(input);
             return IsNullOrEmpty ? oldValue : newValue;
@@ -86,14 +87,15 @@ public class Help {
 
     public static float inputFloat(String message, float oldValue) {
         try {
-            System.out.println(message);
+            System.out.print(message);
             System.out.println(oldValue);
-            System.out.println("New value >>");
+            System.out.print("New value >>");
             var input = sc.nextLine();
             input = input.trim();
             boolean IsNullOrEmpty = false;
             if (input == null || input == "") {
                 IsNullOrEmpty = true;
+                input="0.0f";
             }
             float newValue = Float.parseFloat(input);
             return IsNullOrEmpty ? oldValue : newValue;

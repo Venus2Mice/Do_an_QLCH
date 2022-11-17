@@ -15,15 +15,17 @@ public class BookController {
         var models = list.Select();
         new BookListView(models).Render();
     }
+
     public void Insert() {
         var model = new Book();
-        model = new BookCreateView(model).get();
+        new BookCreateView(model).Render();
         list.insertBook(model);
     }
+
     public void Update(int id) {
         var model = list.Select(id);
-        model = new BookUpdateView(model).get(); 
-        list.updateBook(model,id);
+        new BookUpdateView(model).Render();
+        list.updateBook(model, id);
     }
 
     public void Delete(int id) {
@@ -37,6 +39,7 @@ public class BookController {
 
     public void Search(String key) {
         var models = list.Select(key);
-        new BookListView(models).Render();;
+        new BookListView(models).Render();
+        ;
     }
 }
