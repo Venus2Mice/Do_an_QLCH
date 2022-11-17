@@ -56,7 +56,6 @@ public class Help {
             boolean IsNullOrEmpty = false;
             if (input == null || input == "") {
                 IsNullOrEmpty = true;
-                input="0";
             }
             int newValue = Integer.parseInt(input);
             return IsNullOrEmpty ? oldValue : newValue;
@@ -95,7 +94,6 @@ public class Help {
             boolean IsNullOrEmpty = false;
             if (input == null || input == "") {
                 IsNullOrEmpty = true;
-                input="0.0f";
             }
             float newValue = Float.parseFloat(input);
             return IsNullOrEmpty ? oldValue : newValue;
