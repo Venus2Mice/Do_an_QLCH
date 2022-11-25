@@ -7,10 +7,16 @@ public class Admin extends User {
         authorization = "Admin";
     }
 
-    public Admin(String name, int age) {
+    public Admin(String name, int age, int id, Account account) {
         setAuthorization();
         setAge(age);
         setName(name);
+        setId(id);
+        setAccount(account);
+    }
+
+    public Admin() {
+        setAccount(new Account());
     }
 
 }

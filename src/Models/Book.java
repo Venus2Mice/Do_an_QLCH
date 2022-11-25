@@ -2,7 +2,7 @@ package Models;
 
 public class Book {
 
-    private String bookName = "Unknown";
+    protected String bookName = "Unknown";
 
     public String getBookName() {
         return bookName;
@@ -12,7 +12,7 @@ public class Book {
         this.bookName = bookName;
     }
 
-    private String description = "Unknown";
+    protected String description = "Unknown";
 
     public String getDescription() {
         return description;
@@ -22,7 +22,7 @@ public class Book {
         this.description = description;
     }
 
-    private String title = "Unknown";
+    protected String title = "Unknown";
 
     public String getTitle() {
         return title;
@@ -32,7 +32,7 @@ public class Book {
         this.title = title;
     }
 
-    private String publisher = "Unknown publisher";
+    protected String publisher = "Unknown publisher";
 
     public String getPublisher() {
         return publisher;
@@ -42,7 +42,7 @@ public class Book {
         this.publisher = publisher;
     }
 
-    private String authors = "Unkown authors";
+    protected String authors = "Unkown authors";
 
     public String getAuthors() {
         return authors;
@@ -52,7 +52,7 @@ public class Book {
         this.authors = authors;
     }
 
-    private int year = 2000;
+    protected int year = 2000;
 
     public int getYear() {
         return year;
@@ -62,7 +62,7 @@ public class Book {
         this.year = year;
     }
 
-    private int editon = 1;
+    protected int editon = 1;
 
     public int getEditon() {
         return editon;
@@ -72,7 +72,7 @@ public class Book {
         this.editon = editon;
     }
 
-    private int isbn = 978;
+    protected int isbn = 978;
 
     public int getIsbn() {
         return isbn;
@@ -82,14 +82,14 @@ public class Book {
         this.isbn = isbn;
     }
 
-    private int id = 0;
-    private static int stt = 0;
+    protected int id = 0;
+    protected static int stt = 0;
 
     public int getId() {
         return id;
     }
 
-    private float price = 0.0f;
+    protected float price = 0.0f;
 
     public float getPrice() {
         return price;
@@ -101,15 +101,15 @@ public class Book {
 
     public Book(String bookName, String description, String title, String publisher, String authors, int year,
             int editon, int isbn, float price) {
-        this.bookName = bookName;
-        this.description = description;
-        this.title = title;
-        this.publisher = publisher;
-        this.authors = authors;
-        this.year = year;
-        this.editon = editon;
-        this.isbn = isbn;
-        this.price = price;
+        setBookName(bookName);
+        setDescription(description);
+        setTitle(title);
+        setPublisher(publisher);
+        setAuthors(authors);
+        setYear(year);
+        setEditon(editon);
+        setIsbn(isbn);
+        setPrice(price);
         id += stt;
         stt++;
     }

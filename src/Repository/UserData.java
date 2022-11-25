@@ -9,9 +9,9 @@ public class UserData implements IDataAccess {
 
     public void Load() {
         Users = new User[3];
-        Users[0] = new Admin("Nguyen Hoang Luan", 19);
-        Users[1] = new Customer("Nguyen Thanh Long", 19);
-        Users[2] = new Customer("Nguyen Hoang Nam", 19);
+        Users[0] = new Admin();
+        Users[1] = new Customer();
+        Users[2] = new Customer();
     }
 
     @Override
