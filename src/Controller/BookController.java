@@ -7,7 +7,7 @@ import Views.*;
 public class BookController {
     private BookRepo list;
 
-    public BookController(BookData data) {
+    public BookController(IDataAccess data) {
         list = new BookRepo(data);
     }
 
@@ -40,6 +40,5 @@ public class BookController {
     public void Search(String key) {
         var models = list.Select(key);
         new BookListView(models).Render();
-        ;
     }
 }

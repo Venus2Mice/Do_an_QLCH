@@ -7,7 +7,10 @@ public class Customer extends User {
         super.authorization = "Customer";
     }
 
-    
-    
-    
+    public Customer(String name, int age) {
+        setAuthorization();
+        setName(name);
+        setAge(age);
+    }
+
 }

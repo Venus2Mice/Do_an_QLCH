@@ -12,5 +12,6 @@ public class BookView {
             System.out.println("4. Search Book.");
             System.out.println("5. Sort list.");
             System.out.println("6. Display list book.");
+            System.out.println("7. Exit.");
     }
 }

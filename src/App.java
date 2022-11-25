@@ -1,12 +1,15 @@
 import Controller.BookController;
+import Controller.UserController;
 import Framework.Help;
 import Repository.BookData;
+import Repository.IDataAccess;
+import Repository.UserData;
 import Views.BookView;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        BookData data = new BookData();
-        BookController controller = new BookController(data);
+        IDataAccess context = new BookData();
+        BookController controller = new BookController(context);
         while (true) {
             BookView view = new BookView();
             view.onLoadBook();
@@ -29,7 +32,14 @@ public class App {
                 case 6 -> {
                     controller.List();
                 }
+                case 7 -> {
+                    return;
+                }
             }
         }
+        // IDataAccess context = new UserData();
+        // UserController controller = new UserController(context);
+        // controller.List();
+        // controller.Search("Luan");
     }
 }

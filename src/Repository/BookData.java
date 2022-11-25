@@ -2,8 +2,8 @@ package Repository;
 
 import Models.Book;
 
-public class BookData{
-    public Book Books[];
+public class BookData implements IDataAccess{
+    private Book Books[];
     public void Load(){
         Books = new Book[5];
         Books[0] = new Book(
@@ -41,5 +41,10 @@ public class BookData{
         );
         Books[3] = new Book();
         Books[4] = new Book();
+    }
+    @Override
+    public Object[] get() {
+        // TODO Auto-generated method stub
+        return Books;
     }
 }

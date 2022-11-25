@@ -7,9 +7,9 @@ import Models.User;
 public class UserRepo {
     public User UserList[];
 
-    public UserRepo(UserData context) {
+    public UserRepo(IDataAccess context) {
         context.Load();
-        UserList = context.Users;
+        UserList = (User[]) context.get();
     }
 
     public User[] Select() {

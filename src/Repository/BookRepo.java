@@ -7,9 +7,9 @@ import Models.Book;
 public class BookRepo {
     public Book booklist[];
 
-    public BookRepo(BookData data) {
+    public BookRepo(IDataAccess data) {
         data.Load();
-        booklist = data.Books;
+        booklist = (Book[]) data.get();
     }
 
     // select toan bo mang

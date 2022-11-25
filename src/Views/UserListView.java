@@ -14,7 +14,7 @@ public class UserListView {
             System.out.println("Danh sach rong!!!");
             return;
         }
-        System.out.println("\t\t\t\t\t\t\tDanh sach cac cuon sach:");
+        System.out.println("\t\t\t\t\t\t\tDanh sach cac user : ");
         for (User book : Models) {
             new UserInfoView(book).Render();
             System.out.println();

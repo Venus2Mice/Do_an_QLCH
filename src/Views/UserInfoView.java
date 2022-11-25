@@ -13,6 +13,7 @@ public class UserInfoView {
             System.out.println(">>>> User DETAIL INFORMATION:");
             System.out.println("> Ten :"+Model.getName());
             System.out.println("> Tuoi:"+Model.getAge());
+            System.out.println("> Permision:"+Model.getAuthorization());
             if (Model.getClass().getSimpleName().equals("Admin")) {
                 RenderAdmin((Admin) Model);
     
