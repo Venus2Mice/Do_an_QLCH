@@ -1,8 +1,8 @@
 package Repository;
 
-import Book.Book;
+import Models.Book;
 
-public class Data{
+public class BookData{
     public Book Books[];
     public void Load(){
         Books = new Book[5];

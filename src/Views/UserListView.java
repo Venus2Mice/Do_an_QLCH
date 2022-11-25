@@ -1,22 +1,22 @@
 package Views;
 
-import Models.Book;
+import Models.User;
 
-public class BookListView {
-    private Book[] Models;
+public class UserListView {
+    private User[] Models;
 
-    public BookListView(Book[] models) {
-        Models = models;
+    public UserListView(User []models){
+        Models=models;
     }
 
-    public void Render() {
+    public void Render(){
         if (Models.length == 0) {
             System.out.println("Danh sach rong!!!");
             return;
         }
         System.out.println("\t\t\t\t\t\t\tDanh sach cac cuon sach:");
-        for (Book book : Models) {
-            new BookInfoView(book).Render();
+        for (User book : Models) {
+            new UserInfoView(book).Render();
             System.out.println();
         }
     }

@@ -1,7 +1,7 @@
 package Views;
 
-import Book.Book;
-import Help.Help;
+import Framework.Help;
+import Models.Book;
 
 public class BookCreateView {
     private Book Model;

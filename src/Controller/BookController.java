@@ -1,13 +1,13 @@
 package Controller;
 
-import Book.Book;
+import Models.Book;
 import Repository.*;
 import Views.*;
 
 public class BookController {
     private BookRepo list;
 
-    public BookController(Data data) {
+    public BookController(BookData data) {
         list = new BookRepo(data);
     }
 

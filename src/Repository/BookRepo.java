@@ -1,12 +1,13 @@
 package Repository;
 
 import java.util.Arrays;
-import Book.Book;
+
+import Models.Book;
 
 public class BookRepo {
     public Book booklist[];
 
-    public BookRepo(Data data) {
+    public BookRepo(BookData data) {
         data.Load();
         booklist = data.Books;
     }
@@ -79,6 +80,6 @@ public class BookRepo {
     }
 
     public void sort() {
-        Arrays.sort(booklist);
+        //
     }
 }

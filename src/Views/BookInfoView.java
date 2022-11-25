@@ -1,6 +1,6 @@
 package Views;
 
-import Book.Book;
+import Models.Book;
 
 public class BookInfoView {
     private Book Model;
