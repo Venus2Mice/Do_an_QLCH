@@ -2,7 +2,7 @@ package Framework;
 
 import java.util.Scanner;
 
-public class Help {
+public class ViewHelp {
     final static Scanner sc = new Scanner(System.in);
 
     public static String inputString(String message, String oldValue) {

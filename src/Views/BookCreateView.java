@@ -1,6 +1,6 @@
 package Views;
 
-import Framework.Help;
+import Framework.ViewHelp;
 import Models.Book;
 
 public class BookCreateView {
@@ -12,14 +12,14 @@ public class BookCreateView {
 
     public void Render() {
         System.out.println(">>>> Nhap thong tin cho cuon sach:");
-        Model.setBookName(Help.inputString("> Ten sach : "));
-        Model.setAuthors(Help.inputString("> Tac gia : "));
-        Model.setDescription(Help.inputString("> Mo Ta : "));
-        Model.setEditon(Help.inputInt("> Tai ban: "));
-        Model.setIsbn(Help.inputInt("> Ma isbn:"));
-        Model.setPublisher(Help.inputString("> Ten nxb:"));
-        Model.setTitle(Help.inputString("> Tieu de:"));
-        Model.setPrice(Help.inputFloat("> Gia: "));
-        Model.setYear(Help.inputInt("> Nam xuat ban:"));
+        Model.setBookName(ViewHelp.inputString("> Ten sach : "));
+        Model.setAuthors(ViewHelp.inputString("> Tac gia : "));
+        Model.setDescription(ViewHelp.inputString("> Mo Ta : "));
+        Model.setEditon(ViewHelp.inputInt("> Tai ban: "));
+        Model.setIsbn(ViewHelp.inputInt("> Ma isbn:"));
+        Model.setPublisher(ViewHelp.inputString("> Ten nxb:"));
+        Model.setTitle(ViewHelp.inputString("> Tieu de:"));
+        Model.setPrice(ViewHelp.inputFloat("> Gia: "));
+        Model.setYear(ViewHelp.inputInt("> Nam xuat ban:"));
     }
 }

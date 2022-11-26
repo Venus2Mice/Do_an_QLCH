@@ -1,8 +1,8 @@
 package Views;
 
-public class UserView {
+public class UserMNView {
 
-    public UserView() {
+    public UserMNView() {
     }
     public void Render(){
         System.out.println("\t\t\t\t\t\t\t USER MANAGEMENT SYSTEM");

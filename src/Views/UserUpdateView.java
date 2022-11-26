@@ -1,6 +1,6 @@
 package Views;
 
-import Framework.Help;
+import Framework.ViewHelp;
 import Models.*;
 
 
@@ -22,12 +22,12 @@ public class UserUpdateView {
     }
 
     private void RenderAdmin(User model) {
-        model.setName(Help.inputString("> Ten admin : ", Model.getName()));
-        model.setAge(Help.inputInt("> Tuoi : ", Model.getAge()));
+        model.setName(ViewHelp.inputString("> Ten admin : ", Model.getName()));
+        model.setAge(ViewHelp.inputInt("> Tuoi : ", Model.getAge()));
     }
 
     private void RenderCustomer(Customer model) {
-        model.setName(Help.inputString("> Ten khach hang : ", Model.getName()));
-        model.setAge(Help.inputInt("> Tuoi : ", Model.getAge()));
+        model.setName(ViewHelp.inputString("> Ten khach hang : ", Model.getName()));
+        model.setAge(ViewHelp.inputInt("> Tuoi : ", Model.getAge()));
     }
 }

@@ -1,6 +1,6 @@
 package Views;
 
-import Framework.Help;
+import Framework.ViewHelp;
 import Models.Account;
 
 public class LogInView {
@@ -12,7 +12,7 @@ public class LogInView {
 
     public void Render() {
         System.out.println("\t\t\t\t\t\t\t LOGIN MENU");
-        Account.setUserName(Help.inputString("Username : "));
-        Account.setPassword(Help.inputString("Password : "));
+        Account.setUserName(ViewHelp.inputString("Username : "));
+        Account.setPassword(ViewHelp.inputString("Password : "));
     }
 }

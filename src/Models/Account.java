@@ -37,10 +37,6 @@ public class Account {
         setAuthorization(authorization);
     }
 
-    public Account() {
-        setPassword("none");
-        setUserName("none");
-        setAuthorization(authorization);
-    }
+    public Account() {}
 
 }

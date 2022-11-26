@@ -2,12 +2,11 @@ import Controller.BookController;
 import Controller.LogInController;
 import Controller.UserAuthorization;
 import Controller.UserController;
-import Framework.Help;
+import Framework.Parameter;
 import Models.User;
 import Repository.BookData;
 import Repository.IDataAccess;
 import Repository.UserData;
-import Views.BookView;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -41,6 +40,7 @@ public class App {
         //         }
         //     }
         // }
+
         IDataAccess user_context = new UserData();
         UserController user_controller = new UserController(user_context);
         IDataAccess book_context = new BookData();
@@ -48,6 +48,10 @@ public class App {
         LogInController logInController = new LogInController((User[])user_context.get());
         var x = logInController.Render();
         UserAuthorization userAuthorization = new UserAuthorization(x,book_controller,user_controller);
+        userAuthorization.Render();
         return;
+        
+
+
     }
 }

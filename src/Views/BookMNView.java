@@ -1,8 +1,8 @@
 package Views;
 
-public class BookView {
+public class BookMNView {
 
-    public BookView() {
+    public BookMNView() {
     }
     public void onLoadBook() {
         System.out.println("\t\t\t\t\t\t\tBOOK STORE MANAGEMENT SYSTEM");
