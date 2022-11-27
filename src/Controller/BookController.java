@@ -46,7 +46,11 @@ public class BookController {
         var models = list.Select(key);
         new BookListView(models).Render();
     }
-
+    public void Sort (){
+        list.sort();
+        var models = list.Select();
+        new BookListView(models);
+    }
     public void GhiFile(String path) throws IOException {
         try {
             FileWriter fw = new FileWriter(path);

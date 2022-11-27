@@ -53,6 +53,7 @@ public class UserAuthorization {
                 null);
         router.Register("BookSearch", p -> bookController.Search(ViewHelp.inputString("Nhap tu khoa: ")), null);
         router.Register("BookList", p -> bookController.List(), null);
+        router.Register("Sort", p->bookController.Sort(), null);
         router.Register("UserInsert",
                 p -> userController.Insert(ViewHelp.inputString("Nhap loai user(admin/customer)")),
                 null);

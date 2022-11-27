@@ -71,7 +71,7 @@ public class BookRepo {
     }
 
     // sua thong tin 1 cuon sach
-    public boolean updateBook(Book newbook,int id) {
+    public boolean updateBook(Book newbook, int id) {
         var b = Select(id);
         if (b == null)
             return false;
@@ -79,7 +79,16 @@ public class BookRepo {
         return true;
     }
 
+    // sap xep sach
     public void sort() {
-        //
+        for (int i = 0; i < booklist.length - 1; i++)
+            for (int j = i + 1; j < booklist.length; j++)
+                if (booklist[i].getBookName().compareTo(booklist[j].getBookName()) > 0) {
+                    Book tmp = booklist[i];
+                    booklist[i] = booklist[j];
+                    booklist[j] = tmp;
+                    break;
+                }
     }
+
 }
