@@ -1,5 +1,6 @@
 package Controller;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.UUID;
@@ -63,6 +64,30 @@ public class UserAuthorization {
         router.Register("UserList", p -> userController.List(), null);
         router.Register("HoaDon", p -> hoaDonController.List(), null);
         router.Register("Help", p -> System.out.println(router.GetRoutes()), null);
+        router.Register("FileBook", p->{
+            try {
+                bookController.GhiFile(ViewHelp.inputString("Nhap Ten File : "));
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }, null);
+        router.Register("FileUser", p->{
+            try {
+                userController.GhiFile(ViewHelp.inputString("Nhap Ten File : "));
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }, null);
+        router.Register("FileHoaDon", p->{
+            try {
+                hoaDonController.GhiFile(ViewHelp.inputString("Nhap Ten File : "));
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+        }, null);
         while (true) {
             String req = ViewHelp.inputString(">>>Request : ");
             if (req.trim().toLowerCase().equals("exit"))
@@ -110,7 +135,6 @@ public class UserAuthorization {
             @Override
             public void action(Parameter t) {
                 hoaDonController.Search(Model.getId());
-                return;
             }
 
         }, null);

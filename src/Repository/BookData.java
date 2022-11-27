@@ -14,7 +14,7 @@ public class BookData implements IDataAccess{
             "Internet",
             2000,
             1,
-            197564133,
+            1975,
             12000.575f
         );
         Books[1] = new Book(
@@ -25,7 +25,7 @@ public class BookData implements IDataAccess{
             "Internet",
             2000,
             2,
-            32137123,
+            3216,
             75000.125f
         );
         Books[2] = new Book(
@@ -36,7 +36,7 @@ public class BookData implements IDataAccess{
             "Tom and Jone",
             2005,
             3,
-            123143,
+            123,
             125000f
         );
         Books[3] = new Book();

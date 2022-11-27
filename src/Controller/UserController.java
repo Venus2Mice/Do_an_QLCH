@@ -1,5 +1,9 @@
 package Controller;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import Models.Admin;
 import Models.Customer;
 import Models.User;
@@ -54,5 +58,41 @@ public class UserController {
     public void Search(String key) {
         var models = list.Select(key);
         new UserListView(models).Render();
+    }
+    public void GhiFile(String path) throws IOException {
+        try {
+            FileWriter fw = new FileWriter(path);
+            BufferedWriter bw = new BufferedWriter(fw);
+            var tmp = list.Select();
+            bw.write(tmp.length + "");
+            bw.newLine();
+            for (User user : tmp) {
+                bw.write("{");
+                bw.newLine();
+                bw.write(user.getName());
+                bw.newLine();
+                bw.write(user.getAge()+"");
+                bw.newLine();
+                bw.write(user.getId()+"");
+                bw.newLine();
+                var usname = user.getAccount().getUserName();
+                var pass = user.getAccount().getPassword();
+                bw.write(usname);
+                bw.newLine();
+                bw.write(pass);
+                bw.newLine();
+                if(user.getClass().getSimpleName().equals("Customer")){
+                    var c = (Customer) user;
+                    bw.write(c.getDescription());
+                }
+                bw.newLine();
+                bw.write("},");
+                bw.newLine();
+            }
+            bw.close();
+            fw.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
     }
 }

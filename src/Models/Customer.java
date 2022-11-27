@@ -1,7 +1,7 @@
 package Models;
 
 public class Customer extends User {
-    private String description;
+    private String description = "";
 
     public String getDescription() {
         return description;
