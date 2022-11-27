@@ -67,26 +67,17 @@ public class UserController {
             bw.write(tmp.length + "");
             bw.newLine();
             for (User user : tmp) {
-                bw.write("{");
-                bw.newLine();
-                bw.write(user.getName());
-                bw.newLine();
-                bw.write(user.getAge()+"");
-                bw.newLine();
-                bw.write(user.getId()+"");
-                bw.newLine();
+                bw.write(user.getName()+";");
+                bw.write(user.getAge()+";");
+                bw.write(user.getId()+";");
                 var usname = user.getAccount().getUserName();
                 var pass = user.getAccount().getPassword();
-                bw.write(usname);
-                bw.newLine();
-                bw.write(pass);
-                bw.newLine();
+                bw.write(usname+";");
+                bw.write(pass+";");
                 if(user.getClass().getSimpleName().equals("Customer")){
                     var c = (Customer) user;
-                    bw.write(c.getDescription());
+                    bw.write(c.getDescription()+";");
                 }
-                bw.newLine();
-                bw.write("},");
                 bw.newLine();
             }
             bw.close();
