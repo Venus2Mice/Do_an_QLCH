@@ -1,6 +1,5 @@
 package Controller;
 
-import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.UUID;
@@ -18,13 +17,15 @@ public class UserAuthorization {
     private UserController userController;
     private HoaDonController hoaDonController;
     Book tmp[] = new Book[0];// mang tam luu san pham vao gio hang trc khi luu hoa don
+    private Router router;
 
     public UserAuthorization(User model, BookController bookController, UserController userController,
-            HoaDonController hoaDonController) {
+            HoaDonController hoaDonController, Router router) {
         Model = model;
         this.bookController = bookController;
         this.userController = userController;
         this.hoaDonController = hoaDonController;
+        this.router = router;
     }
 
     private Boolean isAdmin() {
@@ -42,20 +43,26 @@ public class UserAuthorization {
     }
 
     private void AdminController() throws Exception {
-        Router r = Router.Instance();
-        r.Register("BookInsert", p -> bookController.Insert(), null);
-        r.Register("BookDelete", p -> bookController.Delete(ViewHelp.inputInt("Nhap id cuon sach can xoa: ")), null);
-        r.Register("BookUpdate", p -> bookController.Update(ViewHelp.inputInt("nhap id cuon sach can sua:")), null);
-        r.Register("BookSearch", p -> bookController.Search(ViewHelp.inputString("Nhap tu khoa: ")), null);
-        r.Register("BookList", p -> bookController.List(), null);
-        r.Register("UserInsert", p -> userController.Insert(ViewHelp.inputString("Nhap loai user(admin/customer)")),
+
+        router.ClearAll();
+        router.Register("BookInsert", p -> bookController.Insert(), null);
+        router.Register("BookDelete", p -> bookController.Delete(ViewHelp.inputInt("Nhap id cuon sach can xoa: ")),
                 null);
-        r.Register("UserDelete", p -> userController.Delete(ViewHelp.inputInt("Nhap id cuon sach can xoa: ")), null);
-        r.Register("UserUpdate", p -> userController.Update(ViewHelp.inputInt("nhap id cuon sach can sua:")), null);
-        r.Register("UserSearch", p -> userController.Search(ViewHelp.inputString("Nhap tu khoa: ")), null);
-        r.Register("UserList", p -> userController.List(), null);
-        r.Register("HoaDon", p -> hoaDonController.List(), null);
-        r.Register("Help", p -> System.out.println(r.GetRoutes()), null);
+        router.Register("BookUpdate", p -> bookController.Update(ViewHelp.inputInt("nhap id cuon sach can sua:")),
+                null);
+        router.Register("BookSearch", p -> bookController.Search(ViewHelp.inputString("Nhap tu khoa: ")), null);
+        router.Register("BookList", p -> bookController.List(), null);
+        router.Register("UserInsert",
+                p -> userController.Insert(ViewHelp.inputString("Nhap loai user(admin/customer)")),
+                null);
+        router.Register("UserDelete", p -> userController.Delete(ViewHelp.inputInt("Nhap id cuon sach can xoa: ")),
+                null);
+        router.Register("UserUpdate", p -> userController.Update(ViewHelp.inputInt("nhap id cuon sach can sua:")),
+                null);
+        router.Register("UserSearch", p -> userController.Search(ViewHelp.inputString("Nhap tu khoa: ")), null);
+        router.Register("UserList", p -> userController.List(), null);
+        router.Register("HoaDon", p -> hoaDonController.List(), null);
+        router.Register("Help", p -> System.out.println(router.GetRoutes()), null);
         while (true) {
             String req = ViewHelp.inputString(">>>Request : ");
             if (req.trim().toLowerCase().equals("exit"))
@@ -66,12 +73,12 @@ public class UserAuthorization {
     }
 
     private void CustomerController() throws Exception {
-        Router r = Router.Instance();
 
-        r.Register("Search", p -> bookController.Search(ViewHelp.inputString("Nhap tu khoa: ")), null);
-        r.Register("List", p -> bookController.List(), null);
-        r.Register("Help", p -> System.out.println(r.GetRoutes()), null);
-        r.Register("addToCart", new ControllerAction<Parameter>() {
+        router.ClearAll();
+        router.Register("Search", p -> bookController.Search(ViewHelp.inputString("Nhap tu khoa: ")), null);
+        router.Register("List", p -> bookController.List(), null);
+        router.Register("Help", p -> System.out.println(router.GetRoutes()), null);
+        router.Register("addToCart", new ControllerAction<Parameter>() {
 
             @Override
             public void action(Parameter t) {
@@ -83,7 +90,7 @@ public class UserAuthorization {
             }
 
         }, null);
-        r.Register("Buy", new ControllerAction<Parameter>() {
+        router.Register("Buy", new ControllerAction<Parameter>() {
             @Override
             public void action(Parameter t) {
 
@@ -98,7 +105,7 @@ public class UserAuthorization {
                 hoaDonController.Insert(makhachhang, mahoadon, ngaymua, thanhtien, tmp);
             }
         }, null);
-        r.Register("Xem Don Hang", new ControllerAction<Parameter>() {
+        router.Register("Xem Don Hang", new ControllerAction<Parameter>() {
 
             @Override
             public void action(Parameter t) {

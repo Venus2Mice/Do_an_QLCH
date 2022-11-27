@@ -50,10 +50,13 @@ public class Router {
         }
         if (req.parameter == null) {
             routingTable.get(req.route).action(null);
-        }
-        else{
+        } else {
             routingTable.get(req.route).action(req.parameter);
         }
+    }
+
+    public void ClearAll() {
+        routingTable.clear();
     }
 
     private class Request {

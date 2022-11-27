@@ -1,10 +1,9 @@
-import javax.swing.text.View;
-
 import Controller.BookController;
 import Controller.HoaDonController;
 import Controller.LogInController;
 import Controller.UserAuthorization;
 import Controller.UserController;
+import Framework.Router;
 import Framework.ViewHelp;
 import Models.User;
 import Repository.BookData;
@@ -18,15 +17,17 @@ public class App {
         UserController user_controller = new UserController(user_context);
         IDataAccess book_context = new BookData();
         BookController book_controller = new BookController(book_context);
+        IDataAccess hoadon_context = new HoaDonData();
+        HoaDonController hoaDonController = new HoaDonController(hoadon_context);
+        Router router = Router.Instance();
         while (true) {
             LogInController logInController = new LogInController((User[]) user_context.get());
             var x = logInController.Render();
-            IDataAccess hoadon_context = new HoaDonData();
-            HoaDonController hoaDonController = new HoaDonController(hoadon_context);
-            UserAuthorization userAuthorization = new UserAuthorization(x, book_controller, user_controller,hoaDonController);
+            UserAuthorization userAuthorization = new UserAuthorization(x, book_controller, user_controller,
+                    hoaDonController,router);
             userAuthorization.Render();
             var req = ViewHelp.inputString("Continute or exit : ");
-            if(req.trim().toLowerCase().equals("exit"))
+            if (req.trim().toLowerCase().equals("exit"))
                 return;
         }
     }
