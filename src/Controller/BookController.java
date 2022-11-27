@@ -5,7 +5,7 @@ import Repository.*;
 import Views.*;
 
 public class BookController {
-    private BookRepo list;
+    public BookRepo list;
 
     public BookController(IDataAccess data) {
         list = new BookRepo(data);

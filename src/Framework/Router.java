@@ -36,6 +36,7 @@ public class Router {
     }
 
     public void Register(String route, ControllerAction action, String help) {
+        route = route.trim().toLowerCase();
         if (!routingTable.containsKey(route)) {
             routingTable.put(route, action);
             helpTable.put(route, help);

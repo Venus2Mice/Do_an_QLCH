@@ -3,7 +3,6 @@ package Views;
 import Framework.ViewHelp;
 import Models.*;
 
-
 public class UserUpdateView {
     private User Model;
 
@@ -22,12 +21,13 @@ public class UserUpdateView {
     }
 
     private void RenderAdmin(User model) {
-        model.setName(ViewHelp.inputString("> Ten admin : ", Model.getName()));
-        model.setAge(ViewHelp.inputInt("> Tuoi : ", Model.getAge()));
+        model.setName(ViewHelp.inputString("> Ten admin : ", model.getName()));
+        model.setAge(ViewHelp.inputInt("> Tuoi : ", model.getAge()));
     }
 
     private void RenderCustomer(Customer model) {
-        model.setName(ViewHelp.inputString("> Ten khach hang : ", Model.getName()));
-        model.setAge(ViewHelp.inputInt("> Tuoi : ", Model.getAge()));
+        model.setName(ViewHelp.inputString("> Ten khach hang : ", model.getName()));
+        model.setAge(ViewHelp.inputInt("> Tuoi : ", model.getAge()));
+        model.setDescription(ViewHelp.inputString("> Mo ta : ", model.getDescription()));
     }
 }
